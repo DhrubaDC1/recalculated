@@ -2,7 +2,10 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState("");
+  const [prev, setPrev] = useState(0);
+  const [next, setNext] = useState(0);
+  const [operator, setOperator] = useState("");
   return (
     <div className=" bg-gradient-to-r from-fuchsia-600 via-purple-500 to-blue-400 py-6">
       <div className=" flex-col">
@@ -12,25 +15,25 @@ function App() {
         <div className="px-6">
           <div className="flex justify-between py-4">
             <button
-              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(0)}
             >
               C
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               √
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               %
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               /
@@ -38,25 +41,25 @@ function App() {
           </div>
           <div className="flex justify-between  py-4">
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
-              onClick={() => setVal(1)}
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
+              onClick={() => setVal(val + "1")}
             >
               1
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(2)}
             >
               2
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(3)}
             >
               3
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               x
@@ -64,25 +67,25 @@ function App() {
           </div>
           <div className="flex justify-between  py-4">
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(4)}
             >
               4
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(5)}
             >
               5
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(6)}
             >
               6
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               -
@@ -90,25 +93,25 @@ function App() {
           </div>
           <div className="flex justify-between  py-4">
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(7)}
             >
               7
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(8)}
             >
               8
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(9)}
             >
               9
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               +
@@ -122,13 +125,13 @@ function App() {
               0
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50"
               onClick={() => setVal(val)}
             >
               .
             </button>
             <button
-              className=" text-5xl w-20 h-20 bg-black text-white rounded-full"
+              className=" text-5xl w-20 h-20 bg-white bg-opacity-20 text-black rounded-full hover:bg-opacity-50 "
               onClick={() => setVal(val)}
             >
               =
